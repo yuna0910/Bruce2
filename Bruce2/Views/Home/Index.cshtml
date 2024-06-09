@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選擇題</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>選擇題</h1>
+
+    <div id="question">
+        <h2>布魯斯生日?</h2>
+        <input type="radio" name="q1" value="a"> 0626<br>
+        <input type="radio" name="q1" value="b"> 0627<br>
+        <input type="radio" name="q1" value="c"> 0628<br>
+        <button onclick="checkAnswer('q1')">確認答案</button>
+    </div>
+
+    <div id="result" style="display: none;">
+        <h2>你的答案：</h2>
+        <p id="answer"></p>
+    </div>
+
+    <script>
+        function checkAnswer(questionId) {
+            var answer = document.querySelector('input[name="' + questionId + '"]:checked');
+            if (answer) {
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('answer').innerHTML = '你選擇了：' + answer.value;
+            } else {
+                alert('請選擇一個答案！');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
